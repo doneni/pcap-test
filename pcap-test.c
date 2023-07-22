@@ -159,8 +159,8 @@ int main(int argc, char* argv[]) {
         struct libnet_tcp_hdr *tcp_hdr = (struct libnet_tcp_hdr*)(packet + sizeof(struct libnet_ethernet_hdr) + sizeof(struct libnet_ipv4_hdr));
 
         // Check if the packet is TCP packet or not
-        //if (ip_hdr->ip_p != 6)
-        //    continue;
+        if (ip_hdr->ip_p != 6)
+            continue;
 
 	printf("%u bytes captured\n", header->caplen);
 	
